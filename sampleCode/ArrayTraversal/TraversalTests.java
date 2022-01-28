@@ -1,7 +1,8 @@
+package sampleCode.ArrayTraversal;
 
 public class TraversalTests {
    public static void main(String[] args) {
-      boolean part1 = false;
+      boolean part1 = true;
       boolean part2 = false;
       boolean part3 = false;
       boolean part4 = false;
@@ -35,8 +36,15 @@ public class TraversalTests {
        */
        
       // Your code goes below this line (suggested length: ~10 lines)
-      System.out.println(arr);      
-   }
+      if (arr.length==0){
+         System.out.println("[]");
+      } else {
+      System.out.print("[ " + arr[0]);      
+      for (int i=1; i<arr.length; i++){
+         System.out.print(", " + arr[1]);
+      }
+         System.out.println(" ]");
+   }}
    
    public static boolean areArraysEqual(int[] arr1, int[] arr2) {
       /*
