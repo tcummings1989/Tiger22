@@ -59,7 +59,7 @@ public class Wordle {
          String guess = console.nextLine().toLowerCase();
          
          // TODO (Step 3): change the if condition below to check if the guess is the right length
-         if (false) {
+         if (guess.length()==5) {
             System.out.println("Your guess must have 5 letters");
          } else if (!isRealWord(guess)) {
             System.out.println("You must enter a real word as your guess");
@@ -77,9 +77,13 @@ public class Wordle {
        * You should implement a search algorithm to check if the guess is contained
        * in the list. If it helps, you can use the knowledge that the list is in sorted order.
        */
-      return true;
+         for (int i=0; i < WordLists.WORDS.size(); i++) {
+             if (WordLists.WORDS.get(i) == guess){
+                 return true;
+             }}
+               return false;
    }
-   
+
    public static void printGuessFeedback(String guess, String target) {
       /*
        * TODO (Step 4): implement this method which should 
