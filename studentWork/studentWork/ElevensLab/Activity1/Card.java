@@ -109,4 +109,16 @@ public class Card {
 		String s = this.rank + " of " + this.suit + "(point value = [" + this.pointValue + "] )";
 		return s;
 	}
+
+	public Card(String rank, String suit, int pointValue){
+		this.rank = rank;
+		this.suit = suit;
+		this.pointValue = pointValue;
+	}
+
+	public Card(){
+		this.rank = "null";
+		this.rank = "null";
+		this.pointValue = 0;
+	}
 }

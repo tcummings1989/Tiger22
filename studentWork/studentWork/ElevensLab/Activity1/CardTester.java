@@ -25,9 +25,12 @@ public class CardTester {
 		c.setRank("Eight");
 		c.setPointValue(8);
 
+		Card d = new Card("Jack", "Clubs", 11);
+
 		System.out.println (a.toString());
 		System.out.println (b.toString());
 		System.out.println (c.toString());
+		System.out.println (d.toString());
 
 		System.out.println (b.matches(a));
 		System.out.println (b.matches(c));
