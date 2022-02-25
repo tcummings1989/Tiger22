@@ -81,9 +81,15 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		Card k = cards.get(cards.size()-1);
-		cards.remove(cards.size()-1);
-		return k;
+		if (cards.size()>0){
+			int s = cards.size();
+			Card k = cards.get(s);
+			return k;
+		}
+		else {
+			return null;
+		}
+
 	}
 
 	/**
