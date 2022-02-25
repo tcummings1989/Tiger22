@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "studentWork/EncapsulatedBankAccount",
-        "studentWork"
+        "studentWork",
+        "sampleCode/Encapsulation"
     ]
 }

@@ -1,4 +1,4 @@
-
+package Encapsulation;
 
 public class QueueClient {
 
@@ -20,8 +20,8 @@ public class QueueClient {
         System.out.println(q.toString());
 
         ///// DANGER //////
-       // System.out.println("Removing element! : " + q.list.remove(1));
-       // System.out.println(q.toString());
+    //    System.out.println("Removing element! : " + q.list.remove(1));
+    //  System.out.println(q.toString());
     }
 
     public static void DoQueueSafeOperations() {
