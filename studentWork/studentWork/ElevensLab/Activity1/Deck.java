@@ -34,13 +34,15 @@ public class Deck {
 
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		for(int i=0; i<ranks.length; i++ ){
-			for (int y=0; i<suits.length; i++){
+		this.cards = new ArrayList<Card>();
+
+			for (int y=0; y<suits.length; y++){
+				String t = suits[y];
+
 			for (int m=0; m<values.length; m++){
-				Card x = new Card(ranks[i], suits[y], values[m]);
-				cards.add(x);
+			    this.cards.add(new Card(ranks[m], t , values[m]));
+				
 			}}}
-	}
 
 
 	/**
@@ -98,7 +100,7 @@ public class Deck {
 	 */
 	@Override
 	public String toString() {
-		String rtn = "size = " + size + "Undealt cards: " + cards.size();
+		String rtn = "size = " + this.cards.size() + "Undealt cards: ";
 
 		for (int k = size - 1; k >= 0; k--) {
 			rtn = rtn + cards.get(k);
@@ -111,7 +113,7 @@ public class Deck {
 			}
 		}
 
-		rtn = rtn + "\nDealt cards: \n";
+	rtn = rtn + "\nDealt cards: \n";
 		for (int k = cards.size() - 1; k >= size; k--) {
 			rtn = rtn + cards.get(k);
 			if (k != size) {

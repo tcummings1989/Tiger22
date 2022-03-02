@@ -10,6 +10,10 @@ public class DeckTester {
 	 */
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		
+		String[] ranks = {"jack","queen","king"};
+		String[] suits = {"hearts", "diamonds"};
+		int[] pointValue = {11,12,13};
+		Deck Deck1 = new Deck(ranks, suits, pointValue);
+		System.out.println(Deck1.toString());
 	}
 }
