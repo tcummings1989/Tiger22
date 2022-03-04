@@ -53,7 +53,9 @@ public class Shuffler {
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 		int x = (values.length+1)/2;
-		int y = values.length - x;
+		System.out.println("x = " + x);
+		int y = values.length - x;		
+		System.out.println("y = " + y);
 		int[] shuffledDeck = new int[values.length];
 
 		int[] firstHalf = new int[x];
@@ -61,22 +63,27 @@ public class Shuffler {
 			firstHalf[i] = values[i];
 		}
 
+		System.out.println(firstHalf[0] + " " + firstHalf[1]);
+
 		int[] secondHalf = new int[y];
-		for (int i=y; i<values.length; i++){
-			int k=0;
+		int k=0;
+		for (int i=values.length-1; i>x-1; i--){
 			secondHalf[k] = values[i];
 			k++;
 		}
 
+		System.out.println(secondHalf[0] + " " + secondHalf[1]);
+
+		int f =0;
+		int s=0;
+		
 		for (int i=0; i<values.length; i++){
 			if (i%2==0){ 
-				int f =0;
 				shuffledDeck[i]=firstHalf[f];
 				f++;
 				}
 			
 			else{
-				int s=0;
 				shuffledDeck[i]=secondHalf[s];
 				s++;
 			}}
@@ -104,6 +111,8 @@ public class Shuffler {
 		for (int i=0; i<values.length; i++){
 		Random r = new Random();
 		int x = r.nextInt(values.length);
+		int m = values[i];
 		values[i] = values[x];
+		values[x]=m;
 	}}
 }
