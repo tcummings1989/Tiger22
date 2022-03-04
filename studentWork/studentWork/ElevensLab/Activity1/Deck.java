@@ -1,5 +1,5 @@
 package studentWork.ElevensLab.Activity1;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -74,6 +74,13 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for (int i=0; i<cards.size(); i++){
+			Random r = new Random();
+			int x = r.nextInt(cards.size());
+			Card m = cards.get(i);
+			cards.remove(m);
+			cards.add(x,m);
+		}
 	}
 
 	/**
@@ -84,7 +91,7 @@ public class Deck {
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		if (cards.size()>0){
-			int s = cards.size();
+			int s = cards.size()-1;
 			Card k = cards.get(s);
 			return k;
 		}
