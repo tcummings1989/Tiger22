@@ -44,7 +44,7 @@ public class ElevensBoard {
 	/**
 	 * Flag used to control debugging print statements.
 	 */
-	private static final boolean I_AM_DEBUGGING = false;
+	private static final boolean I_AM_DEBUGGING = true;
 
 
 	/**
@@ -186,22 +186,19 @@ public class ElevensBoard {
 	 */
 	public boolean isLegal(List<Integer> selectedCards) {
 		if(selectedCards.size()==2){
-
-
-
-		else{
-			System.out.println("This is not a legal set. Try again");
+		     boolean d = containsPairSum11(selectedCards);
+			 return d;
 		}
 	
-	}
 		else if(selectedCards.size()==3){
-			int x = selectedCards.get(0);
-			int y = selectedCards.get(1);
-			int z = selectedCards.get(2);
+		    boolean f = containsJQK(selectedCards);
+			return f;
 			}
 
-
-		else if ()
+		else{
+			System.out.println("This is not a legal selection. You must follow the rules!");
+			return false;
+		}
 	}
 
 	/**
@@ -214,7 +211,14 @@ public class ElevensBoard {
 	 */
 	public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		List<Integer> cardValues = new ArrayList<Integer>();
+		for (int i=0; i<cards.length; i++){
+			int x = cards[i].getPointValue();
+			cardValues.add(x);
 	}
+	boolean g = containsPairSum11(cardValues);
+	return g;
+}
 
 
 	/**
@@ -238,9 +242,11 @@ public class ElevensBoard {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 		if (cards[selectedCards.get(0)].getPointValue() + cards[selectedCards.get(1)].getPointValue() == 11){
 		    replaceSelectedCards(selectedCards);
+			return true;
 		}	
 		else{
-			System.out.println
+			System.out.println("These do not add to 11! Learn to add better!");
+			return false;
 		}
 	}
 
@@ -254,5 +260,19 @@ public class ElevensBoard {
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+
+		List<String> cardRanks = new ArrayList<String>();
+		for (int i=0; i<selectedCards.size(); i++){
+			cardRanks.add(cards[selectedCards.get(i)].getRank());
+		}
+
+		if (cardRanks.contains("jack") && cardRanks.contains("queen") && cardRanks.contains("king")){
+			replaceSelectedCards(selectedCards);
+			return true;
+		}
+		else{
+			return false;
+		}
+
 	}
 }
